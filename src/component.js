@@ -1,3 +1,5 @@
+import { h } from 'vue'
+
 const freeze = (object, property, value) => {
   Object.defineProperty(object, property, {
     configurable: true,
@@ -17,7 +19,6 @@ const unfreeze = (object, property, value = null) => {
 
 
 export default {
-  abstract: true,
   name: 'Fragment',
 
   props: {
@@ -84,19 +85,21 @@ export default {
     }
   },
 
-  render(h) {
-    const children = this.$slots.default
+  setup(props, context) {
+    return () => {
+      const children = context.slots.default()
 
-    // add fragment attribute on the children
-    if (children && children.length)
-      children.forEach(child =>
-        child.data = { ...child.data, attrs: { fragment: this.name, ...(child.data || {}).attrs } }
+      // add fragment attribute on the children
+      if (children && children.length)
+        children.forEach(child =>
+          child.data = { ...child.data, attrs: { fragment: props.name, ...(child.data || {}).attrs } }
+        )
+
+      return h(
+        'div',
+        { attrs: { fragment: props.name } },
+        children,
       )
-
-    return h(
-      "div",
-      { attrs: { fragment: this.name } },
-      children
-    )
+    }
   }
 };

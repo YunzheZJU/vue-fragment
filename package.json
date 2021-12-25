@@ -24,9 +24,6 @@
   "bugs": {
     "url": "https://github.com/y-nk/vue-fragment/issues"
   },
-  "peerDependencies": {
-    "vue": "^2.5.16"
-  },
   "files": [
     "*.md",
     "**/*.js"
@@ -38,5 +35,9 @@
     "rollup": "^0.60.4",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-minify-es": "^1.1.1"
+  },
+  "dependencies": {
+    "core-js": "^3.20.1",
+    "vue": "^3.0.0"
   }
 }

@@ -6,8 +6,8 @@ export const Fragment = component
 export const SSR = ssr
 
 export const Plugin = {
-  install: function(Vue) {
-    Vue.component('fragment', component)
+  install: function(app) {
+    app.component('fragment', component)
   }
 }
 
