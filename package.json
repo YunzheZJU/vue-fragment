@@ -1,6 +1,6 @@
 {
   "name": "@yunzhe35p/vue-fragment",
-  "version": "1.5.1-vue.3",
+  "version": "1.5.1-vue.3-2",
   "description": "fragment component for vuejs",
   "main": "dist/vue-fragment.min.js",
   "module": "dist/vue-fragment.esm.js",
@@ -37,7 +37,6 @@
     "rollup-plugin-minify-es": "^1.1.1"
   },
   "dependencies": {
-    "core-js": "^3.20.1",
     "vue": "^3.0.0"
   }
 }

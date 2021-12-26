@@ -44,7 +44,7 @@ export default {
     }
 
     container.insertBefore = (node, ref) => {
-      parent.insertBefore(node, ref)
+      parent.insertBefore(node, ref === null ? tail : ref)
       freeze(node, 'parentNode', container)
     }
 
